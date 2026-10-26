@@ -1,0 +1,117 @@
+[
+  {
+    "id": "alias-answer-path",
+    "name": "CNAME aliases \u2014 chain / unresolved target (TDSTS / RFC1034)",
+    "description": "Follow up to8 owned-session CNAME hops to a declared IPv4/IPv6 answer or synthetic NXDOMAIN. Observe alias/address rewriting without contacting returned addresses. Does not claim cache poisoning, real takeover or security enforcement."
+  },
+  {
+    "id": "answer-rotation",
+    "name": "DNS answer rotation \u2014 rebinding/fast-flux fixture (TDSTS)",
+    "description": "Alternate configured A or AAAA answers for one owned test name, with TTL0. DNS queries only: the client never connects to the returned addresses. This is a controlled answer-behavior fixture, not an SSRF exploit."
+  },
+  {
+    "id": "benign-long-hostnames",
+    "name": "Benign controls \u2014 long hostnames (TDSTS)",
+    "description": "Send bounded long, word-like hostnames as a benign comparison corpus. Report observed DNS outcomes; false-positive classification requires independent product events."
+  },
+  {
+    "id": "cache-retry-observation",
+    "name": "DNS cache and retries \u2014 repeated names (TDSTS / RFC1035)",
+    "description": "Compare repeated names with unique names and authoritative arrival counts. The controlled receiver supplies the selected TTL. Client attempts and actual upstream delivery remain separate measurements."
+  },
+  {
+    "id": "controlled-transfer",
+    "name": "DNS tunneling \u2014 Base32 synthetic transfer (TDSTS / T1048)",
+    "description": "Measure independent delivery of synthetic bytes through the selected resolver. Uses offset-identified base32 query labels; complete and partial delivery remain distinct from security actions."
+  },
+  {
+    "id": "custom-query-label",
+    "name": "DNS query labels \u2014 custom ASCII (TDSTS / RFC 1035)",
+    "description": "Send a small, bounded series of operator-entered ASCII labels, including punctuation, under the configured test zone. Captures raw and normalized authoritative observations. This is a query-pattern test, not verified file delivery or proof of detection."
+  },
+  {
+    "id": "degraded-recovery-observation",
+    "name": "Controlled DNS error and recovery observation (TDSTS)",
+    "description": "Observe bounded normal/error/normal response phases on distinct session-owned names. Synthetic response fixture only; no infrastructure outage, service restart or failover is induced or proved."
+  },
+  {
+    "id": "dga-like-names",
+    "name": "DGA-like labels \u2014 generated names (TDSTS / T1568.002)",
+    "description": "Generate a bounded reproducible corpus of high-variation labels inside the configured session zone. This evaluates visibility and classification; it does not recreate a malware DGA or register domains."
+  },
+  {
+    "id": "dns-command-demo",
+    "name": "DNS command channel - fixed status / echo",
+    "description": "Receive a bounded status or echo command in DNS TXT answers and return a matching result digest in DNS questions. Fixed harmless operations only; no arbitrary execution or remote administration. Management coordinates the session separately."
+  },
+  {
+    "id": "dnssec-owned-zone",
+    "name": "DNSSEC \u2014 trusted owned-zone probes (TDSTS / RFC4035)",
+    "description": "Probe separately provisioned signed, bogus and unsigned owned-zone names with DO/CD. Verify direct RRset signatures against a trusted local DNSKEY. Does not construct a root DS chain or authenticate unsigned status; coordinator arrivals indicate misrouting."
+  },
+  {
+    "id": "dnssec-signature-fixture",
+    "name": "DNSSEC signatures \u2014 valid, invalid, unsigned (TDSTS / RFC4035)",
+    "description": "Six bounded DO/CD probes against a self-signed lab island, with client-side signature checks. Requires the dnssec extra on both ends. A key learned through the same DNS path is unauthenticated. This fixture does not provision a parent DS chain or establish resolver enforcement; use a separately trusted anchor and provisioned signed zone for that qualification."
+  },
+  {
+    "id": "edns-option-transfer",
+    "name": "DNS data transfer \u2014 experimental EDNS option (TDSTS / RFC 6891)",
+    "description": "Measure independent delivery of finite synthetic bytes in local/experimental EDNS option65001. Resolvers may strip unknown options; missing bytes alone are not enforcement."
+  },
+  {
+    "id": "encoded-label-transfer",
+    "name": "DNS tunneling \u2014 encoded subdomains (TDSTS / T1048)",
+    "description": "Send synthetic data in unique subdomain labels using Base32 or hexadecimal encoding. Independently verify received bytes. A, AAAA and TXT refer to query types; this test does not carry file data in TXT responses. Encoding is not encryption. For DoT/DoH, select the resolver's actual TLS/HTTPS port and trusted certificate identity."
+  },
+  {
+    "id": "file-transfer",
+    "name": "DNS file transfer \u2014 operator files (TDSTS / T1048)",
+    "description": "Transfer selected local files through DNS query names or a local/experimental EDNS option in 64-KiB segments. The receiver reconstructs only DNS-observed bytes and independently verifies complete-file SHA-256. Select one ISO or multiple small files. Original TDSTS workload; technique reference MITRE ATT&CK T1048, not a copied exploit."
+  },
+  {
+    "id": "policy-response-observation",
+    "name": "DNS policy \u2014 allowed / blocked names (TDSTS / DNS-006,007)",
+    "description": "Compare configured-policy response codes for two explicit labels in the owned receiver zone. The authoritative fixture answers both normally; the tool changes no product policy. Matching codes do not establish detection or containment."
+  },
+  {
+    "id": "query-pattern",
+    "name": "DNS query patterns \u2014 beacon / unique labels (TDSTS)",
+    "description": "Send a bounded sequence of synthetic unique or repetitive labels. Measures receiver observations and DNS responses, without assigning a file-transfer byte count or claiming behavioral detection."
+  },
+  {
+    "id": "rate-step-observation",
+    "name": "DNS rate steps \u2014 bounded unique queries (TDSTS / RFC 8198)",
+    "description": "Compare finite synchronous query stages at operator-selected rates within the global limits. Reports separate client attempts and independent receiver arrivals; no overload threshold, protection or infrastructure-recovery result is inferred."
+  },
+  {
+    "id": "record-observation",
+    "name": "DNS record observations \u2014 A / AAAA / NS / MX / SOA / CAA (TDSTS / RFC 1035)",
+    "description": "Observe finite DNS record queries in the random owned session with synthetic authoritative replies. A/AAAA compare the answer with a known documentation address. Missing or changed answers do not alone prove poisoning, hijacking or containment. No third-party enumeration or zone transfer."
+  },
+  {
+    "id": "resolution-preservation",
+    "name": "Provisioned DNS baseline before and after load",
+    "description": "Query1\u20138 separately provisioned relative owned-zone A/AAAA names before and after0\u201364 synthetic session-owned questions. Compare complete exact-owner address sets; retain missing/error/unattempted observations. Coordinator baseline arrivals mean misrouting. Does not certify general DNS availability or attribute changes to security enforcement."
+  },
+  {
+    "id": "response-size-observation",
+    "name": "DNS response sizes \u2014 bounded ratio fixture (TDSTS / RFC 5358)",
+    "description": "Measure paired DNS request/response message sizes with finite benign TXT replies in the owned session. The fixture respects a bounded advertised response size. No source spoofing, victim reflection, flood or vulnerability conclusion."
+  },
+  {
+    "id": "subdomain-proliferation-observation",
+    "name": "Subdomain proliferation with preserved baseline (TDSTS)",
+    "description": "Observe1\u201364 new session-owned child names between two known baseline address checks. Synthetic DNS fixture only; no domain compromise or malicious hosting is performed."
+  },
+  {
+    "id": "system-query-transfer",
+    "name": "OS DNS path \u2014 synthetic QNAME transfer (TDSTS / T1048)",
+    "description": "Perform bounded A lookups through the native Windows/Linux name service, preserving its routing and caches. Receiver verifies only actual DNS arrivals. Counters describe logical API calls; wire queries, response codes and selected resolver are unobserved."
+  },
+  {
+    "id": "txt-response-transfer",
+    "name": "DNS TXT \u2014 response data transfer (TDSTS / T1071.004)",
+    "description": "Receive a server-generated synthetic fixture through TXT answers. Source bytes are generated only on the receiver; control carries size and hashes. Client verifies each source offset and the complete hash."
+  }
+]
