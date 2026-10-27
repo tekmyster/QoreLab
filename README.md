@@ -1,16 +1,16 @@
-# QoreLab — coming soon
+# QoreLab — coming soon · alpha
 
 **Controlled security-tool validation. Repeatable scenarios. Evidence you can examine.**
 
 QoreLab is a modular client/server framework for testing how an environment's tools observe and handle controlled activity against a designated receiver. Development builds currently retain the TDSTS runtime identity.
 
-## Coming soon
+## Coming soon — alpha
 
 Windows/Linux clients, a receiver with a web operator console, bounded CLI workflows, independent byte/hash accounting, retained reports, session/action queues, DNS-only agent bootstrap, approved local canary hashing, and separate HTTPS command and bulk-file paths.
 
 Application source is maintained in a separate private repository. This public repository contains only the project page and public-facing materials. Source will not be made public without explicit owner approval. No release downloads are available here yet.
 
-## Screenshots
+## Screenshots — coming soon
 
 Real client and server screenshots are pending capture and review. No mockups or unrelated-product screenshots are presented as QoreLab screenshots. See `assets/README.md` for the planned views.
 
@@ -50,6 +50,6 @@ The catalog below describes implemented controlled workloads. A scenario does no
 
 ## Status
 
-In development. Qualification is ongoing; general availability and full platform acceptance have not been announced. Live-vendor efficacy requires measurements against the installed product/version/policy. No claims of comprehensive attack coverage or automatic exploitation.
+Alpha development. Qualification is ongoing; general availability and full platform acceptance have not been announced. Live-vendor efficacy requires measurements against the installed product/version/policy. No claims of comprehensive attack coverage or automatic exploitation.
 
 ©2026 Tekmyster Industries, LLC.
